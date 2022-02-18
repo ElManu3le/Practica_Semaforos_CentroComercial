@@ -6,6 +6,7 @@ import java.util.*;
 public class Portero {
     // capacidad del local
     private final int MAX_SIZE = 31;
+    private int contador = 0;
 
     private LinkedList<Object> aforoPersonas = new LinkedList<>();
 
@@ -24,7 +25,9 @@ public class Portero {
                 }
             }
             aforoPersonas.add(new Object());
-            System.out.println("Ha entrado una nueva persona, hay: " + aforoPersonas.size() + " en el local \n");
+            contador ++;
+            System.out.println("Ha entrado una nueva persona, hay: " + aforoPersonas.size() + " en el local ");
+            System.out.println("Han entrado al local: " + contador + " personas \n");
             aforoPersonas.notify();
         }
     }
