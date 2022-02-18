@@ -18,6 +18,7 @@ public class Portero {
                 System.out.println("El local esta lleno, espera hasta que haya hueco");
                 try {
                     aforoPersonas.wait();
+
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -31,7 +32,7 @@ public class Portero {
     public void consume() {
         synchronized (aforoPersonas) {
             while (aforoPersonas.size() == 0) {
-                //System.out.println("[Consumidor" + Thread.currentThread().getName() + "] El almacén está vacío");
+                
                 System.out.println("El local esta vacio!!!");
                 try {
                     aforoPersonas.wait();

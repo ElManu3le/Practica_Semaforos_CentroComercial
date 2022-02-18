@@ -12,10 +12,15 @@ public class Local {
         for (int i = 0; i < 50; i++) {
 
             //ESto no funciona
+            /*
             p1.run();
             c1.run();
             p1.join();
             c1.join();
+            */
+
+            p1.start();
+            c1.start();
             
         }
 
