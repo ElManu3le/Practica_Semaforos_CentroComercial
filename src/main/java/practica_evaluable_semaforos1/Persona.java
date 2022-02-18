@@ -6,7 +6,7 @@ public class Persona implements Runnable {
 
     public Persona(){}
 
-    public Persona(Portero portero , String name){
+    public Persona(Portero portero){
         this.portero = portero;
     }
 

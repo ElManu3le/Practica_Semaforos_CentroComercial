@@ -5,7 +5,7 @@ public class Consumer  implements Runnable{
 
     public Consumer(){}
 
-    public Consumer(Portero portero , String name){
+    public Consumer(Portero portero){
         this.portero = portero;
     }
 
