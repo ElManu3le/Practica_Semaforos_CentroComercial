@@ -14,7 +14,7 @@ public class Portero {
     public void entrar() {
         synchronized (aforoPersonas) {
             while (aforoPersonas.size() + 1 > MAX_SIZE) {
-                // System.out.println("[Productor" + Thread.currentThread().getName() + "] El almacén está lleno");
+
                 System.out.println("El local esta lleno, espera hasta que haya hueco");
                 try {
                     aforoPersonas.wait();
@@ -23,9 +23,8 @@ public class Portero {
                 }
             }
             aforoPersonas.add(new Object());
-            //System.out.println("[Productor" + Thread.currentThread().getName() + "] Producción de un producto, ahora en stock" + aforoPersonas.size());
-
-            aforoPersonas.notifyAll();
+            System.out.println("Ha entrado una nueva persona, hay: " + aforoPersonas.size() + " en el local \n");
+            aforoPersonas.notify();
         }
     }
 
@@ -41,8 +40,8 @@ public class Portero {
                 }
             }
             aforoPersonas.remove();
-            //System.out.println("[Consumidor" + Thread.currentThread().getName() + "] Consumir un producto, ahora en stock" + aforoPersonas.size());
             
+            System.out.println("Se ha ido una persona, ahora quedan en el local: " + aforoPersonas.size() + "\n" );
             aforoPersonas.notifyAll();
         }
     }
