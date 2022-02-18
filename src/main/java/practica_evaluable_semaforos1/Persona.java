@@ -1,7 +1,21 @@
 package practica_evaluable_semaforos1;
 
-/**Ezto eh el productor y no me rayo. */
-//Esta persona entra en el edificio, permanece durante 1seg y luego es consumido
-public class Persona {
-    
+public class Persona implements Runnable {
+
+    private Portero portero;
+
+    public Persona(){}
+
+    public Persona(Portero portero , String name){
+        this.portero = portero;
+    }
+
+    @Override
+    public void run(){
+        while(true){
+           
+            portero.entrar();
+        }
+    }
+
 }
