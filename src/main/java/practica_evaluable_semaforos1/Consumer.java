@@ -11,7 +11,8 @@ public class Consumer  implements Runnable{
 
     @Override
     public void run(){
-        while(true){
+
+        for (int i = 0; i < 100; i++) {
             try{
                 Thread.sleep(1000);
                 portero.consume();
@@ -19,7 +20,6 @@ public class Consumer  implements Runnable{
             }catch (InterruptedException e){
                 e.printStackTrace();
             }
-            
         }
     }
 }
